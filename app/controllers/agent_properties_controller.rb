@@ -1,0 +1,2 @@
+class AgentPropertiesController < ApplicationController
+end
