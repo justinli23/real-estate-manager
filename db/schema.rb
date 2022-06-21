@@ -15,16 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_021644) do
   enable_extension "plpgsql"
 
   create_table "agent_properties", force: :cascade do |t|
-    t.string "agent_id"
-    t.string "property_id"
+    t.integer "agent_id"
+    t.integer "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
-    t.integer "client_id"
-    t.integer "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_20_021644) do
     t.string "name_1"
     t.string "name_2"
     t.string "comments"
+    t.integer "agent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
