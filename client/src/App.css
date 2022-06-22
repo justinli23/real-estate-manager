@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+/* .searchbar {
+  margin: 5000 auto;
+  display: block;
+  position: right;
+  align-items: right;
+} */
+
+/* #searchbar {
+  margin: 5000 auto;
+  display: block;
+  position: right;
+  align-items: right;
+} */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
