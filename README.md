@@ -2,6 +2,10 @@ NOTES
 
 This application is a manager for a real estate group to organize their agents, property listings, and clients. Agents can have multiple clients and can have multiple properties depending on what the client(s) is looking for.
 
+Don't forget to start the server with
+
+sudo service postgresql start
+
 # README
 
 This README would normally document whatever steps are necessary to get the

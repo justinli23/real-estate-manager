@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :agent_properties
-  resources :reviews
-  resources :agents
-  resources :properties
-  resources :clients
+  # resources :agent_properties, only: [:index]
+  resources :agents, only: [:index, :show, :create, :destroy]
+  resources :properties, only: [:index, :show]
+  resources :clients, only: [:show, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
