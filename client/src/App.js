@@ -35,9 +35,8 @@ function App() {
     <br></br>
     <Search handleHouseSearch= {handleHouseSearch} />
       <div className="App">
-      <Outlet />   
         <Routes>
-        <Route exact path={"/"} element={<AllHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />            
+          <Route exact path={"/"} element={<AllHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />            
           <Route exact path={"/AllHouses.js"} element={<AllHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />                      
           <Route exact path={"/SellHouse"} element={<SellHouse handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />              
           <Route exact path="/Login">             

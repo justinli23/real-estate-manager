@@ -6,6 +6,19 @@ Don't forget to start the server with
 
 sudo service postgresql start
 
+Next, run the Rails server in one terminal:
+
+```console
+$ rails s
+```
+
+Open another terminal and run the React server:
+
+```console
+$ npm start --prefix client
+```
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
