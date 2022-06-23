@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
 import SellHouse from "./Components/SellHouse";
+import AllHouses from "./Components/AllHouses";
 
 function App() {
   const [houses, setHouses] = useState([])
@@ -34,16 +35,14 @@ function App() {
     <br></br>
     <Search handleHouseSearch= {handleHouseSearch} />
       <div className="App">
-        <Switch>
-          <Route path={"/ListedHouses"} element={<ListedHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />
-            <h1>Test Route</h1>
-         
-          <Route path={"/SellHouse"} element={<SellHouse handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />
-            <h1>Testing </h1>     
-          <Route path="/Login">
-            <h1>Welcome Username </h1>
+      <Outlet />   
+        <Routes>
+        <Route exact path={"/"} element={<AllHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />            
+          <Route exact path={"/AllHouses.js"} element={<AllHouses handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />                      
+          <Route exact path={"/SellHouse"} element={<SellHouse handleHouseSearch={handleHouseSearch} houses={filteredHouses} Search={Search}/>} />              
+          <Route exact path="/Login">             
           </Route>    
-        </Switch>
+        </Routes>
       </div>
     </BrowserRouter> 
   );

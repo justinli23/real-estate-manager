@@ -8,7 +8,7 @@ function Navbar() {
         <nav>
             <ul className="list">
                 <li className="navigation" >
-                    <Link className="navigation" to= "/ListedHouses">Find Homes</Link>
+                    <Link className="navigation" to= "/AllHouses">Find Homes</Link>
                 </li>    
                 <li className="navigation" >
                     <Link className="navigation" to= "/SellHouse">List Your House</Link>
