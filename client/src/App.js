@@ -10,10 +10,9 @@ function App() {
   const [filteredHouses, setFilteredHouses] = useState(houses)
 
   function handleHouseSearch(e){
-    const filteredHome=houses.filter(house=>{
-      return house.full_address.toLowerCase().includes(e.target.value.toLowerCase())
-      || house.name.toLowerCase().includes(e.target.value.toLowerCase())
-      || house.description.toLowerCase().includes(e.target.value.toLowerCase());
+    debugger
+    const filteredHome=houses.filter(house=>{      
+      return house.address.toLowerCase().includes(e.target.value.toLowerCase())           
     })
     setFilteredHouses(filteredHome)
   }

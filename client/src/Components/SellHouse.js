@@ -19,13 +19,13 @@ function SellHouse() {
     }
 
     function handleSubmit(event) {
-        fetch("http://localhost:3000/houses", {
+        fetch("http://localhost:3000/properties", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                type: formData.name,
+                name: formData.name,
                 address: formData.address,
                 price: formData.price,
                 rooms: formData.rooms,

@@ -3,37 +3,26 @@ import HouseCard from "./HouseCard.js";
 import {useParams, Link} from "react-router-dom";
 import NoMatch from './NoMatch.js';
 
-function HouseGrid() {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [houseData, setHouseData] = useState([]);
+function HouseGrid({houses}) {
+  
 
 
     let { id } = useParams(); 
     
-    useEffect(() => {
-        fetch("/properties")
-        .then((res) => res.json())
-        .then((data) => {
-            setHouseData(data);
-            setIsLoaded(true);
-        });
-    }, []);
+ 
 
-    console.log(houseData)
+    
 
     if (!id) {
         console.log("No id provided")
         return <AllHouses />;        
     }   
 
-    // let singleHouse = getHouseById(id);
-    let singleHouse = houseData.find((house) => house.id == id);
+  
+    let singleHouse = houses.find((house) => house.id == id);
     
 
-    function getHouseById(id) {
-        // return houseData.find((house) => house.id === id);
-        return houseData      
-    }
+   
     
 
     function AllHouses() {
@@ -42,7 +31,7 @@ function HouseGrid() {
             <div className="main-container">
                 <div className="results-container">                 
                 <br></br>
-                {houseData.map((house) => {
+                {houses.map((house) => {
                 return <HouseCard key={house.id} house={house} />;
             })}</div>
             </div>
@@ -56,7 +45,7 @@ function HouseGrid() {
     }
    
 
-    if (!isLoaded) return <h2>Loading Housing Inventory...</h2>;
+   
 
    
    return (
