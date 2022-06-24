@@ -8,7 +8,7 @@ function Search({handleHouseSearch}){
             <input
                 type="text"
                 id="search"
-                placeholder="Type address or description"
+                placeholder="Address or state"
                 onChange={handleHouseSearch}
             />
         </div>
