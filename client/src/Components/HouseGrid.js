@@ -14,7 +14,7 @@ function HouseGrid({houses}) {
     
 
     if (!id) {
-        console.log("No id provided")
+        
         return <AllHouses />;        
     }   
 
@@ -39,8 +39,7 @@ function HouseGrid({houses}) {
     }
     
     if (!singleHouse) {
-        console.log("Not single house")
-        console.log(singleHouse)
+        
         return <NoMatch />;
     }
    
